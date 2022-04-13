@@ -2,8 +2,8 @@ import { Button, Divider } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import {MapOutlined,PhoneAndroidOutlined, Twitter, WhatsappOutlined,FacebookOutlined} from '@mui/icons-material'
-
+import {MapOutlined,PhoneAndroidOutlined, Twitter, WhatsappOutlined,FacebookOutlined, Close} from '@mui/icons-material'
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import CircularProgress from '@mui/material/CircularProgress'
 import { Fade } from "react-awesome-reveal";
 import Goals from '../components/Goals';
@@ -16,6 +16,52 @@ width: 100%;
 overflow-x: hidden;
 background-color:white;
 overflow-y: hidden;
+.arrUp{
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    background-color:#f9f9f9;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.phone{
+    position: fixed;
+    transition: all 0.5s;
+    top: 0;
+    min-height: 250px;
+    background-color: white;
+    width: 100%;
+    z-index: 200;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 48%);
+    display: flex;
+    flex-direction: column;
+    ul{
+        margin-left: auto;
+        margin-right: 40px;
+        list-style: none;
+        li{
+           border-bottom: 0.5px solid lightgray;
+            a{
+                text-decoration: none;
+                font-weight: bolder;
+                color: black;
+                font-size: 23px;
+            }
+        }
+    }
+}
+.phone.show{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
 .foot{
     background:linear-gradient(to right,#8381f9,#8381f9,#8381f9,#b770fb,#b770fb,#b770fb);
     min-height: 40px;
@@ -213,11 +259,13 @@ and (max-device-width : 480px) {
 `;
 export default function HomeScreen() {
     const [loading,setLoading]=useState(true)
+    const [show,setShow]=useState('')
     useEffect(()=>{
     setTimeout(() => {
         setLoading(false)
     }, 1000);
     },[])
+
     return (
         <>
         {
@@ -242,7 +290,9 @@ export default function HomeScreen() {
                  <li><a href='#foots'>Social Handles</a></li>
              </ul>
          <div className='icon'>
-         <MenuOutlinedIcon style={{
+         <MenuOutlinedIcon onClick={()=>{
+             setShow('show')
+         }} style={{
              fontSize:35,
              color:'white'
          }}/>
@@ -334,6 +384,42 @@ export default function HomeScreen() {
             }}/>
             </div>
             <h4>All rights reserved Ⓒ 2022</h4>
+           </div>
+
+           <div className={`phone ${show}`}>
+           <Close onClick={()=>{
+               setShow('')
+           }} style={{
+               fontSize:40,
+               color:'black',
+               marginLeft:'auto',
+               marginTop:20,
+               marginRight:20
+           }}/>
+
+         <ul>
+                 <li onClick={()=>{
+               setShow('')
+           }}><a href='#introD'>Home</a></li>
+                 <li onClick={()=>{
+               setShow('')
+           }}><a href='#about'>About Us</a></li>
+                 <li onClick={()=>{
+               setShow('')
+           }}><a href='#conn'>Contact Us</a></li>
+                 <li onClick={()=>{
+               setShow('')
+           }}><a href='#foots'>Social Handles</a></li>
+            </ul>
+           </div>
+
+
+           <div onClick={()=>{
+               window.scrollTo({top:0})
+           }} className='arrUp'>
+        <ArrowDropUpIcon style={{
+            fontSize:60
+        }}/>
            </div>
         </StyledContainer>
              
