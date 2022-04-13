@@ -2,6 +2,7 @@ import { Button, Divider } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import {MapOutlined,PhoneAndroidOutlined, Twitter, WhatsappOutlined,FacebookOutlined} from '@mui/icons-material'
 
 import CircularProgress from '@mui/material/CircularProgress'
 import { Fade } from "react-awesome-reveal";
@@ -15,7 +16,52 @@ width: 100%;
 overflow-x: hidden;
 background-color:white;
 overflow-y: hidden;
+.foot{
+    background:linear-gradient(to right,#8381f9,#8381f9,#8381f9,#b770fb,#b770fb,#b770fb);
+    min-height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h4{
+        color: white;
+    }
+    .soc{
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.contact{
+    min-height: 50vh;
+    width: 80%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    .contDet{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     h2{
+         margin-left: 20px;
+         width: 80%;
+         text-align: justify;
+         margin-right: 20px;
+         color: rgba(0,0,0,0.5);
+         
+     }
+    }
 
+}
 
 .aboutUs{
     min-height: 50vh;
@@ -192,8 +238,8 @@ export default function HomeScreen() {
              <ul>
                  <li><a href='#introD'>Home</a></li>
                  <li><a href='#about'>About Us</a></li>
-                 <li><a href='#'>Contact Us</a></li>
-                 <li><a href='#'>Social Handles</a></li>
+                 <li><a href='#conn'>Contact Us</a></li>
+                 <li><a href='#foots'>Social Handles</a></li>
              </ul>
          <div className='icon'>
          <MenuOutlinedIcon style={{
@@ -205,7 +251,7 @@ export default function HomeScreen() {
 
 
 
-            <div className='mainIntro'>
+            <div id='introD' className='mainIntro'>
                 <div>
                 <h4>Top Life Resources</h4>
                 <p>
@@ -242,6 +288,53 @@ export default function HomeScreen() {
            </div>
 
            <Board/>
+           <Divider style={{
+               marginTop:30,
+               width:'80%',
+               marginRight:'auto',
+               marginLeft:'auto'
+           }}>Our Contacts</Divider>
+           <div id='conn' className='contact'>
+           <div className='contDet'>
+           <MapOutlined></MapOutlined>
+           <h2>
+           No 8, Mbonu Ojike Street, Ikenegbu Owerri.
+           Imo State.
+           </h2>
+            
+           </div>
+
+
+           <div className='contDet'>
+           <PhoneAndroidOutlined></PhoneAndroidOutlined>
+           <h2>
+          07064912335
+           </h2>
+            
+           </div>
+          
+           </div>
+
+
+           <div id='foots' className='foot'>
+            <div className='soc'>
+            <FacebookOutlined style={{
+                color:'white',
+                cursor:'pointer'
+            }}/>
+            <Twitter style={{
+                marginLeft:30,
+                color:'white',
+                cursor:'pointer'
+            }}/>
+            <WhatsappOutlined style={{
+                marginLeft:30,
+                color:'white',
+                cursor:'pointer'
+            }}/>
+            </div>
+            <h4>All rights reserved Ⓒ 2022</h4>
+           </div>
         </StyledContainer>
              
             )
