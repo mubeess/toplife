@@ -1,4 +1,4 @@
-import { Button, Divider } from '@mui/material';
+import { Button, Divider, Modal } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -207,7 +207,7 @@ and (max-device-width : 480px) {
     background:linear-gradient(#8381f9,#8381f9,#8381f9,#b770fb,#b770fb,#b770fb);
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px;
     .head{
         display: flex;
         flex-direction: row;
@@ -235,7 +235,7 @@ and (max-device-width : 480px) {
 
 .mainIntro{
     margin-left:20px;
-    margin-top: 40px;
+    margin-top: 3px;
     margin-bottom: auto;
     display:grid;
     grid-template-columns: 1fr;
@@ -260,6 +260,10 @@ and (max-device-width : 480px) {
 export default function HomeScreen() {
     const [loading,setLoading]=useState(true)
     const [show,setShow]=useState('')
+    const [open,setOpen]=useState(false)
+    const handleClose=()=>{
+        setOpen(false)
+    }
     useEffect(()=>{
     setTimeout(() => {
         setLoading(false)
@@ -311,7 +315,9 @@ export default function HomeScreen() {
                    internally generated revenue, enhance eviromental standards
                    and optimise our clients performance.
                 </p>
-                <Button style={{
+                <Button onClick={()=>{
+                    setOpen(true)
+                }} style={{
                     backgroundColor:'white',
                     width:'50%',
                     
@@ -425,7 +431,41 @@ export default function HomeScreen() {
              
             )
         }
-        
+         <Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+<>
+<Close onClick={handleClose} style={{
+               fontSize:40,
+               color:'white',
+               marginLeft:'40%',
+               marginTop:10,
+               marginRight:20,
+               backgroundColor:'black'
+           }}/>
+<p style={{
+    width:'80%',
+    minHeight:200,
+    marginLeft:'auto',
+    marginRight:'auto',
+    backgroundColor:'white',
+    color:'black',
+    marginTop:40,
+    textAlign:'justify',
+    padding:20
+}}>
+Top Life Resources major areas of activities covers but not limited to enviromental/revenue
+consultancy services, government departments and clients in and within the country. The company
+uses her expertise in corporate enviromental consultancy services in assisting  her clients 
+in adding values to enviromental standards and towards improved internally generated revenue.
+since it has been established that increased enviromental standards are keys to sustainable 
+green economy, sufficient to meet the demands of sevices at various levels of government in the society. 
+</p>
+</>
+</Modal>
         </>
     )
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledBoard=styled.div`
@@ -51,30 +52,34 @@ and (max-device-width : 480px) {
 `;
 
 export default function Board() {
+    
     return (
         <StyledBoard>
             <h1>Board Members</h1>
             <div className='members'>
               <div className='memRole'>
                <img src={require('../assets/male.png')} alt='img'/>
-               <h2>CEO</h2>
-               <p>Salihu Rufai, Chilang</p>
+               <h2>General Manager</h2>
+               <p>Hon. Eruo F.C</p>
               </div>
 
 
               <div className='memRole'>
                <img src={require('../assets/male.png')} alt='img'/>
-               <h2>CTO</h2>
-               <p>Mubarak Ibrahim</p>
+               <h2>Principal Consultant</h2>
+               <p>Prof. Ustax Aminu O. Igwegbe</p>
               </div>
 
 
               <div className='memRole'>
                <img src={require('../assets/male.png')} alt='img'/>
-               <h2>Secretary</h2>
-               <p>Aisha Aliyu</p>
+               <h2>Lead Consultant</h2>
+               <p>Dikeogu T.C</p>
               </div>
             </div>
+
+
+           
         </StyledBoard>
     )
 }
