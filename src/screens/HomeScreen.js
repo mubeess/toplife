@@ -8,6 +8,8 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { Fade } from "react-awesome-reveal";
 import Goals from '../components/Goals';
 import Board from '../components/Board';
+import Accredited from '../components/Accredited';
+
 
 const StyledContainer=styled.div`
 min-height: 100vh;
@@ -63,7 +65,7 @@ overflow-y: hidden;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
 .foot{
-    background:linear-gradient(to right,#8381f9,#8381f9,#8381f9,#b770fb,#b770fb,#b770fb);
+    background:linear-gradient(to right,#7be495,#7be495,#7be495,#329d9c,#329d9c,#329d9c);
     min-height: 40px;
     width: 100%;
     display: flex;
@@ -130,7 +132,7 @@ overflow-y: hidden;
     min-height: 100vh;
     overflow: hidden;
     width: 100%;
-    background:linear-gradient(to right,#8381f9,#8381f9,#8381f9,#b770fb,#b770fb,#b770fb);
+    background:linear-gradient(to right,#7be495,#7be495,#7be495,#329d9c,#329d9c,#329d9c);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -146,8 +148,10 @@ overflow-y: hidden;
         img{
             height: 100px;
             width: 100px;
-            background-color: rgba(255,255,255,0.7);
-            border-radius: 50%;
+            background-color: rgba(255,255,255,0.3);
+            /* border-radius: 50%; */
+            
+            
         }
         ul{
             align-self: flex-end;
@@ -204,7 +208,7 @@ and (max-device-width : 480px) {
     .intro{
     min-height: 100vh;
     width: 100%;
-    background:linear-gradient(#8381f9,#8381f9,#8381f9,#b770fb,#b770fb,#b770fb);
+    background:linear-gradient(#7be495,#7be495,#7be495,#329d9c,#329d9c,#329d9c);
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -223,8 +227,8 @@ and (max-device-width : 480px) {
         img{
             height: 70px;
             width: 70px;
-            background-color: rgba(255,255,255,0.9);
-            border-radius: 50%;
+            background-color: rgba(255,255,255,0.3);;
+            /* border-radius: 50%; */
         }
         ul{
           display: none;
@@ -320,6 +324,7 @@ export default function HomeScreen() {
                 }} style={{
                     backgroundColor:'white',
                     width:'50%',
+                    color: '#7be495'
                     
                 }}>More Details</Button>
                 </div>
@@ -340,6 +345,18 @@ export default function HomeScreen() {
                 and corporate social responsibilities in enviromental governance and safety.
                 It was corporated in Nigeria on 25th November, 2013 as a Private Limited company
                 under The Corporate Affairs Commission (CAC), Abuja.
+            </p>
+           </div>
+
+           <div className='aboutUs'>
+           <Divider>MISSION</Divider>
+            <p>
+            To Maintain Best Practices in service delivery; attain 
+            optimum goals in success through corporate ﬁnance administration and 
+            Environmental Standards Compliance Initiative. As a result of the multiple 
+            functions of Government and its Ministries and Agencies at all levels generally, 
+            the need for collaboration with Consultants in some of its activities, 
+            notably, Consultancy Services need not be over emphasized.
             </p>
            </div>
 
@@ -370,6 +387,7 @@ export default function HomeScreen() {
            </div>
           
            </div>
+           <Accredited/>
 
 
            <div id='foots' className='foot'>
@@ -444,7 +462,9 @@ export default function HomeScreen() {
                marginLeft:'40%',
                marginTop:10,
                marginRight:20,
-               backgroundColor:'black'
+               backgroundColor:'black',
+               cursor:'pointer'
+    
            }}/>
 <p style={{
     width:'80%',
@@ -455,17 +475,25 @@ export default function HomeScreen() {
     color:'black',
     marginTop:40,
     textAlign:'justify',
-    padding:20
+    padding:20,
+    maxHeight:500,
+    overflowY:'scroll'
+    
 }}>
 Top Life Resources major areas of activities covers but not limited to enviromental/revenue
 consultancy services, government departments and clients in and within the country. The company
 uses her expertise in corporate enviromental consultancy services in assisting  her clients 
 in adding values to enviromental standards and towards improved internally generated revenue.
 since it has been established that increased enviromental standards are keys to sustainable 
-green economy, sufficient to meet the demands of sevices at various levels of government in the society. 
+green economy, sufficient to meet the demands of sevices at various levels of government in the society.
+Hence, the engagement of professionals in the private sector in galvanizing a framework, which to 
+a large extent ensures the collection of government revenue in a system that enjoys tax evasion and 
+within an environment that is constantly under the threat of climate change factors that are inevitable 
 </p>
 </>
 </Modal>
         </>
     )
 }
+
+
