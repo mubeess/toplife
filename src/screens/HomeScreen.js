@@ -339,12 +339,21 @@ export default function HomeScreen() {
            <div className='aboutUs' id='about'>
            <Divider>ABOUT US</Divider>
             <p>
-                Top Life Resources are specialised in enviromental
-                and revenue consultations, where we assist in creating enabling enviroment
-                that raises civil awareness at all levels in relation to individual, collective
-                and corporate social responsibilities in enviromental governance and safety.
-                It was corporated in Nigeria on 25th November, 2013 as a Private Limited company
-                under The Corporate Affairs Commission (CAC), Abuja.
+                Toplife Resources Ltd was incorporated in Nigeria on 25th November, 
+                2013, as a private Limited Company under the Corporate Affairs Commission (CAC), 
+                Abuja. Her major areas of activities are Environmental and Revenue Consultancy Services
+                 for Government Departments and clients in and within the country. The company uses her
+                  expertise in Corporate Consultancy to assist her clients in improving their Internally 
+                  Generated Revenue and adding values to Environmental Standards, since it has been established 
+                  that increased Environmental Standards are keys to sustainable green economy; sufﬁcient to meet
+                   the demands of services at various levels of Government. Hence, the engagement of professionals 
+                   in the private sector in galvanizing a framework, which to a large extent ensures the collection 
+                   of government revenue in a system that enjoys tax evasion and within an environment 
+                   that is constantly under the threat of climate change factors that are inevitable.
+                   Toplife Resources Ltd are specialist revenue and environmental consultants that assists in 
+                   creating enabling environment that raises civil awareness at all levels in relation to 
+                   individual, collective and corporate social responsibilities in environmental
+                    governance and safety.
             </p>
            </div>
 
