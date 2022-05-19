@@ -2,7 +2,7 @@ import { Button, Divider, Modal } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import {MapOutlined,PhoneAndroidOutlined, Twitter, WhatsappOutlined,FacebookOutlined, Close} from '@mui/icons-material'
+import {MapOutlined,PhoneAndroidOutlined, Twitter, WhatsappOutlined,FacebookOutlined, Close,MailOutline} from '@mui/icons-material'
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import CircularProgress from '@mui/material/CircularProgress'
 import { Fade } from "react-awesome-reveal";
@@ -401,20 +401,26 @@ export default function HomeScreen() {
 
            <div id='foots' className='foot'>
             <div className='soc'>
-            <FacebookOutlined style={{
+            <a href='facebook.com/topliferesources@gmail.com?_rdc=1&_rdr'> 
+              <FacebookOutlined style={{
                 color:'white',
                 cursor:'pointer'
             }}/>
+            </a>
+            <a href='https://twitter.com/eruofestus'> 
             <Twitter style={{
                 marginLeft:30,
                 color:'white',
                 cursor:'pointer'
             }}/>
-            <WhatsappOutlined style={{
+            </a>
+            <a href='mailto:topliferesources@gmail.com'>
+            <MailOutline style={{
                 marginLeft:30,
                 color:'white',
                 cursor:'pointer'
             }}/>
+            </a>
             </div>
             <h4>All rights reserved Ⓒ 2022</h4>
            </div>
